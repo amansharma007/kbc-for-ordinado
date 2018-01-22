@@ -24,8 +24,8 @@
         
         <div id="icons" class="text-center col-sm-2 row ml-auto">
         <a class="col-4"><img src="images/call.png" width="20px" height="auto"></a>
-            <a class="col-4"><p><strong>DD</strong></p></a>
-            <a class="col-4"><p><strong>SKIP</strong></p></a>
+            <a class="col-4"><strong><p>DD</p></strong></a>
+            <a class="col-4"><strong><p>SKIP</p></strong></a>
         </div>
         
         <div id="timer" class="col-sm-2 text-center ml-auto">
@@ -43,7 +43,7 @@
             <div class="row">
             <div class="col-sm-12 text-center">
                 <img src="images/blue.png">
-                <div class="centered"><p>Question?</p></div>
+                <div class="centered"><p id="question">When measuring the charactersistics of a small signal amplifier, say for radio reviever, one might be cocerned with its noise?</p></div>
                 </div>
             </div>
             
@@ -55,13 +55,13 @@
         
             <div class="row">
             <div class="col-sm-6 text-center">
-                <img src="images/blue.png" width="60%">
-                <div class="centered"><p>Option1</p></div>
+                <img id="op-image1" src="images/blue.png" width="60%">
+                <div class="centered"><p id="op1">Ranchoddas Shyamaldas Chanchar</p></div>
                 </div>
                 
                 <div class="col-sm-6 text-center">
-                <img src="images/blue.png" width="60%">
-                    <div class="centered"><p>Option1</p></div>
+                <img id="op-image2" src="images/blue.png" width="60%">
+                    <div class="centered"><p id="op2">Option2</p></div>
                 </div>
                 
             </div>
@@ -74,13 +74,13 @@
         
             <div class="row">
             <div class="col-sm-6 text-center">
-                <img src="images/blue.png" width="60%">
-                <div class="centered"><p>Option1</p></div>
+                <img id="op-image3" src="images/blue.png" width="60%">
+                <div class="centered"><p id="op3">Option3</p></div>
                 </div>
                 
                 <div class="col-sm-6 text-center">
-                <img src="images/blue.png" width="60%">
-                    <div class="centered"><p>Option1</p></div>
+                <img id="op-image4" src="images/blue.png" width="60%">
+                    <div class="centered"><p id="op4">Option4</p></div>
                 </div>
                 
             </div>
@@ -94,23 +94,44 @@
         
             <div class="row">
             <div class="col-sm-4 text-center">
-                <a><img src="images/22.png" width="60px"></a>
+                <a id="previous"><img src="images/22.png" width="60px"></a>
                 </div>
                 
-                <div class="col-sm-4 text-center mt-auto">
+                <div class="col-sm-2 text-center mt-auto">
                 <a><h4><strong>START</strong></h4></a>
+                </div>
+                <div class="col-sm-2 text-center mt-auto">
+                <a id="check"><h4><strong>CHECK?</strong></h4></a>
                 </div>
                 
                 
                 <div class="col-sm-4 text-center">
-                    <a><img src="images/11.png" width="60px"></a>
+                    <a id="next"><img src="images/11.png" width="60px"></a>
                 </div>
                 
             </div>
         </div>
         
-        
-        
+       
+    <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-database.js"></script>
+
+        <script>
+        // Initialize Firebase
+  // TODO: Replace with your project's customized code snippet
+  var config = {
+    apiKey: "AIzaSyAB4xpsP-YD9IGzHFNrr2r4jo_RBWYiUIE",
+    authDomain: "kbc-ordinado.firebaseapp.com",
+    databaseURL: "https://kbc-ordinado.firebaseio.com",
+    projectId: "kbc-ordinado",
+    storageBucket: "kbc-ordinado.appspot.com",
+    messagingSenderId: "899045689125"
+  };
+  firebase.initializeApp(config);
+
+        </script>
+    <script type="text/javascript" src="script.js"></script>    
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
