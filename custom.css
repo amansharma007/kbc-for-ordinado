@@ -1,0 +1,37 @@
+body{
+    background-color: #000000;
+}
+
+h1,h4,p{
+    color: white;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+#icons{
+    padding-top: 40px;
+}
+
+#timer{
+    padding: 20px 0 0 0;
+}
+
+#secondrow{
+    padding: 40px 0 20px 0;
+}
+
+
+#thirdrow{
+    padding: 40px 0 20px 0;
+}
+
+
+#fourthrow{
+    padding: 40px 0 20px 0;
+}
