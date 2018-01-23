@@ -1,71 +1,70 @@
 
 var rootRef = firebase.database().ref();
 
-var c = 1;
+var c = 0;
 var answer = 0;
+var i;
+var myData;
 
-var presentKey;
-
-    var ref= firebase.database().ref().child(0);
-
-    ref.on('value', function(snapshot) {
-        presentKey = snapshot.key;
-        alert(presentKey);
-    });
+    var ref= firebase.database().ref();
 
     ref.on('value', function(snapshot) {
-        document.getElementById("question").innerHTML = snapshot.child("question").val();
-        document.getElementById("op1").innerHTML = snapshot.child("option1").val();
-        document.getElementById("op2").innerHTML = snapshot.child("option2").val();
-        document.getElementById("op3").innerHTML = snapshot.child("option3").val();
-        document.getElementById("op4").innerHTML = snapshot.child("option4").val();
-        answer = snapshot.child("answer").val();
-    });
-
-document.getElementById("next").addEventListener("click", function () {
+        myData = snapshot.val();
     
-    ref= firebase.database().ref().child(c);
-    
-    ref.on('value', function(snapshot) {
-        document.getElementById("question").innerHTML = snapshot.child("question").val();
-        document.getElementById("op1").innerHTML = snapshot.child("option1").val();
-        document.getElementById("op2").innerHTML = snapshot.child("option2").val();
-        document.getElementById("op3").innerHTML = snapshot.child("option3").val();
-        document.getElementById("op4").innerHTML = snapshot.child("option4").val();
-        answer = snapshot.child("answer").val();
+        document.getElementById("question").innerHTML = myData[0].question;
+        document.getElementById("op1").innerHTML = myData[0].option1;
+        document.getElementById("op2").innerHTML = myData[0].option2;
+        document.getElementById("op3").innerHTML = myData[0].option3;
+        document.getElementById("op4").innerHTML = myData[0].option4;
+        answer = myData[0].answer;
     });
-    document.getElementById("op-image1").src = 'images/blue.png';
-    document.getElementById("op-image2").src = 'images/blue.png';
-    document.getElementById("op-image3").src = 'images/blue.png';
-    document.getElementById("op-image4").src = 'images/blue.png';
-    c = c + 1;
-});
 
-
-document.getElementById("previous").addEventListener("click", function () {
-    c = c - 1;
-    ref= firebase.database().ref().child(c);
+$("#next").on("click", function () {
+    c++;
+    console.log(c);
+    ref = firebase.database().ref();
     
-    ref.on('value', function(snapshot) {
-        document.getElementById("question").innerHTML = snapshot.child("question").val();
-        document.getElementById("op1").innerHTML = snapshot.child("option1").val();
-        document.getElementById("op2").innerHTML = snapshot.child("option2").val();
-        document.getElementById("op3").innerHTML = snapshot.child("option3").val();
-        document.getElementById("op4").innerHTML = snapshot.child("option4").val();
-        answer = snapshot.child("answer").val();
-    });
+        document.getElementById("question").innerHTML = myData[c].question;
+        document.getElementById("op1").innerHTML = myData[c].option1;
+        document.getElementById("op2").innerHTML = myData[c].option2;
+        document.getElementById("op3").innerHTML = myData[c].option3;
+        document.getElementById("op4").innerHTML = myData[c].option4;
+        answer = myData[c].answer;
+
     document.getElementById("op-image1").src = 'images/blue.png';
     document.getElementById("op-image2").src = 'images/blue.png';
     document.getElementById("op-image3").src = 'images/blue.png';
     document.getElementById("op-image4").src = 'images/blue.png';
 });
 
-document.getElementById("check").addEventListener("click", function(){
-    ref= firebase.database().ref().child(c);
+
+$("#previous").on("click", function () {
+    c--;
+    console.log(c);
+    ref= firebase.database().ref();
     
-    ref.on('value', function(snapshot) {
-        answer = snapshot.child("answer").val();
-    });
+        document.getElementById("question").innerHTML = myData[c].question;
+        document.getElementById("op1").innerHTML = myData[c].option1;
+        document.getElementById("op2").innerHTML = myData[c].option2;
+        document.getElementById("op3").innerHTML = myData[c].option3;
+        document.getElementById("op4").innerHTML = myData[c].option4;
+        answer = myData[c].answer;
     
+    document.getElementById("op-image1").src = 'images/blue.png';
+    document.getElementById("op-image2").src = 'images/blue.png';
+    document.getElementById("op-image3").src = 'images/blue.png';
+    document.getElementById("op-image4").src = 'images/blue.png';
+});
+
+$("#check").on("click", function(){
+    i=1;
+    
+    answer = myData[c].answer;
     document.getElementById("op-image"+answer).src = 'images/green.png';
+    while(i <= 4){
+        if(i != answer){
+            document.getElementById("op-image"+i).src = 'images/red.png';
+        }
+        i++;
+    }
 });
