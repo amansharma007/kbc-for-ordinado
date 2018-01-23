@@ -20,20 +20,32 @@
         <div class="row">
         <div id="logo" class="col-sm-2">
         <img src="images/logo.png" height="140px" width="140px">
+            
         </div>
         
         <div id="icons" class="text-center col-sm-2 row ml-auto">
-        <a class="col-4"><img src="images/call.png" width="20px" height="auto"></a>
-            <a class="col-4"><strong><p>DD</p></strong></a>
-            <a class="col-4"><strong><p>SKIP</p></strong></a>
+        <a class="col-4"><img src="images/call.png" width="20px" height="auto"><div class="cross"><img id="call" width="30px"></div></a>
+                            
+
+            <a class="col-4"><strong><p>DD</p></strong><div class="cross"><img id="dd" width="30px"></div></a>
+                            
+
+            <a class="col-4"><strong><p>SKIP</p></strong><div class="cross"><img id="skip" width="30px"></div></a>
+                            
+
         </div>
         
-        <div id="timer" class="col-sm-2 text-center ml-auto">
-            <img src="images/bluecircle.png">
-        </div>
+        <div class="col-sm-2 text-center ml-auto">
             
+            <div class="wrapper">
+  <div class="pie spinner"></div>
+  <div class="pie filler"></div>
+  <div class="mask"></div>
+</div>
+
             </div>
     </div>
+        </div>
         
         
         <!--Second Row-->
@@ -97,10 +109,13 @@
                 <a id="previous"><img src="images/22.png" width="60px"></a>
                 </div>
                 
-                <div class="col-sm-2 text-center mt-auto">
-                <a><h4><strong>START</strong></h4></a>
+                <div class="col-sm-1 text-center mt-auto">
+                <a id="play"><h4><strong>PLAY</strong></h4></a>
                 </div>
-                <div class="col-sm-2 text-center mt-auto">
+                <div class="col-sm-1 text-center mt-auto">
+                <a id="pause"><h4><strong>PAUSE</strong></h4></a>
+                </div>
+                <div class="col-sm-1 text-center mt-auto">
                 <a id="check"><h4><strong>CHECK?</strong></h4></a>
                 </div>
                 

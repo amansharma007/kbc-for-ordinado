@@ -1,5 +1,12 @@
+
+
+
 body{
     background-color: #000000;
+}
+
+a{
+    cursor: pointer;
 }
 
 h1,h4,p{
@@ -13,6 +20,10 @@ h1,h4,p{
     transform: translate(-50%, -50%);
 }
 
+.cross{
+    position: absolute;
+    top: 1%;
+}
 
 #icons{
     padding-top: 40px;
@@ -34,4 +45,90 @@ h1,h4,p{
 
 #fourthrow{
     padding: 40px 0 20px 0;
+}
+
+
+
+.wrapper {
+  position: relative;
+  margin: 20px auto;
+  background: black;
+}
+
+.wrapper, .wrapper * {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  width: 140px;
+  height: 140px;
+}
+
+.wrapper .pie {
+  width: 50%;
+  height: 100%;
+  transform-origin: 100% 50%;
+  position: absolute;
+  background: #08C;
+  border: 5px solid rgba(0,0,0,0.5);
+}
+
+.wrapper .spinner {
+  border-radius: 100% 0 0 100% / 50% 0 0 50%;
+  z-index: 200;
+  border-right: none;
+  animation: rota 30s linear 1;
+        animation-play-state: paused;
+
+}
+/*
+.wrapper:hover .spinner,
+.wrapper:hover .filler,
+.wrapper:hover .mask {
+  animation-play-state: running;
+}
+
+#pause:hover{
+    animation-play-state: paused;
+}*/
+
+.wrapper .filler {
+  border-radius: 0 100% 100% 0 / 0 50% 50% 0;
+  left: 50%;
+  opacity: 0;
+  z-index: 100;
+  animation: opa 30s steps(1, end) 1 reverse;
+        animation-play-state: paused;
+
+  border-left: none;
+}
+
+.wrapper .mask {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  background: inherit;
+  opacity: 1;
+  z-index: 300;
+  animation: opa 30s steps(1, end) 1;
+    animation-play-state: paused;
+}
+
+@keyframes rota {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes opa {
+  0% {
+    opacity: 1;
+  }
+  50%, 100% {
+    opacity: 0;
+  }
 }

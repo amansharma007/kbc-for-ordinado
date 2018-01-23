@@ -68,3 +68,33 @@ $("#check").on("click", function(){
         i++;
     }
 });
+
+$("#icons a:nth-child(1)").on("click", function(){
+    document.getElementById("call").src = 'images/Cross.png';
+});
+
+
+$("#icons a:nth-child(2)").on("click", function(){
+    document.getElementById("dd").src = 'images/Cross.png';
+});
+
+
+$("#icons a:nth-child(3)").on("click", function(){
+    document.getElementById("skip").src = 'images/Cross.png';
+});
+
+
+
+
+$("#pause").on("click", function(){
+    $(".wrapper .spinner").css("animation-play-state", "paused");
+    $(".wrapper .filler").css("animation-play-state", "paused");
+    $(".wrapper .mask").css("animation-play-state", "paused");
+});
+
+
+$("#play").on("click", function(){
+    $(".wrapper .spinner").css("animation-play-state", "running");
+    $(".wrapper .filler").css("animation-play-state", "running");
+    $(".wrapper .mask").css("animation-play-state", "running");
+});
