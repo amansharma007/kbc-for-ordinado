@@ -3,6 +3,7 @@ var rootRef = firebase.database().ref();
 
 var c = 0;
 var answer = 0;
+var lock = 0;
 var i;
 var myData;
 
@@ -39,6 +40,9 @@ $("#next").on("click", function () {
     $(".wrapper .filler").css("animation", "none");
     $(".wrapper .mask").css("animation", "none");
     
+    //play music
+    document.getElementById("countdown").currentTime = 0;
+    document.getElementById("questionStart").play();
     
     
     document.getElementById("op-image1").src = 'images/blue.png';
@@ -63,6 +67,10 @@ $("#previous").on("click", function () {
     });
     
     
+    //play music
+    document.getElementById("countdown").currentTime = 0;
+    document.getElementById("questionStart").play();
+    
     //stop animation
     $(".wrapper .spinner").css("animation", "none");
     $(".wrapper .filler").css("animation", "none");
@@ -74,11 +82,48 @@ $("#previous").on("click", function () {
     document.getElementById("op-image4").src = 'images/blue.png';
 });
 
+$("#1").on("click", function(){
+
+    document.getElementById("answerLock").play();
+    document.getElementById("op-image1").src = 'images/green.png';  
+    lock = 1;
+    
+});
+
+$("#2").on("click", function(){
+
+    document.getElementById("answerLock").play();
+    document.getElementById("op-image2").src = 'images/green.png';       
+    lock = 2;
+    
+});
+
+$("#3").on("click", function(){
+
+    document.getElementById("answerLock").play();
+    document.getElementById("op-image3").src = 'images/green.png';       
+    lock = 3;
+    
+});
+
+$("#4").on("click", function(){
+
+    document.getElementById("answerLock").play();
+    document.getElementById("op-image4").src = 'images/green.png';       
+    lock = 4;
+    
+});
+
 $("#check").on("click", function(){
     i=1;
     
     answer = myData[c].answer;
     document.getElementById("op-image"+answer).src = 'images/green.png';
+    
+    if(answer === lock){
+        document.getElementById("gameStart").play();
+    }
+    
     while(i <= 4){
         if(i != answer){
             document.getElementById("op-image"+i).src = 'images/red.png';
@@ -89,20 +134,24 @@ $("#check").on("click", function(){
 
 $("#icons a:nth-child(1)").on("click", function(){
     document.getElementById("call").src = 'images/Cross.png';
+    document.getElementById("lifeline").play();
 });
 
 
 $("#icons a:nth-child(2)").on("click", function(){
     document.getElementById("dd").src = 'images/Cross.png';
+    document.getElementById("lifeline").play();
 });
 
 
 $("#icons a:nth-child(3)").on("click", function(){
     document.getElementById("skip").src = 'images/Cross.png';
+    document.getElementById("lifeline").play();
 });
 
 
 $("#icons a:nth-child(4)").on("click", function(){
+    document.getElementById("gameStart").play();
     document.getElementById("call").src = '';
     document.getElementById("dd").src = '';
     document.getElementById("skip").src = '';
@@ -110,13 +159,21 @@ $("#icons a:nth-child(4)").on("click", function(){
 
 
 $("#pause").on("click", function(){
+    //play music
+    document.getElementById("countdown").pause();
+    
     $(".wrapper .spinner").css("animation-play-state", "paused");
     $(".wrapper .filler").css("animation-play-state", "paused");
     $(".wrapper .mask").css("animation-play-state", "paused");
 });
 
 
+
+
 $("#play").on("click", function(){
+    //play music
+    document.getElementById("countdown").play();
+    
     // restart animation
     setTimeout(function() {
         
