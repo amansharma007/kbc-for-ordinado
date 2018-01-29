@@ -84,6 +84,11 @@ $("#previous").on("click", function () {
 
 $("#1").on("click", function(){
 
+    document.getElementById("countdown").pause();
+    
+    $(".wrapper .spinner").css("animation-play-state", "paused");
+    $(".wrapper .filler").css("animation-play-state", "paused");
+    $(".wrapper .mask").css("animation-play-state", "paused");
     document.getElementById("answerLock").play();
     document.getElementById("op-image1").src = 'images/green.png';  
     lock = 1;
@@ -92,6 +97,11 @@ $("#1").on("click", function(){
 
 $("#2").on("click", function(){
 
+    document.getElementById("countdown").pause();
+    
+    $(".wrapper .spinner").css("animation-play-state", "paused");
+    $(".wrapper .filler").css("animation-play-state", "paused");
+    $(".wrapper .mask").css("animation-play-state", "paused");
     document.getElementById("answerLock").play();
     document.getElementById("op-image2").src = 'images/green.png';       
     lock = 2;
@@ -100,6 +110,11 @@ $("#2").on("click", function(){
 
 $("#3").on("click", function(){
 
+    document.getElementById("countdown").pause();
+    
+    $(".wrapper .spinner").css("animation-play-state", "paused");
+    $(".wrapper .filler").css("animation-play-state", "paused");
+    $(".wrapper .mask").css("animation-play-state", "paused");
     document.getElementById("answerLock").play();
     document.getElementById("op-image3").src = 'images/green.png';       
     lock = 3;
@@ -108,6 +123,11 @@ $("#3").on("click", function(){
 
 $("#4").on("click", function(){
 
+    document.getElementById("countdown").pause();
+    
+    $(".wrapper .spinner").css("animation-play-state", "paused");
+    $(".wrapper .filler").css("animation-play-state", "paused");
+    $(".wrapper .mask").css("animation-play-state", "paused");
     document.getElementById("answerLock").play();
     document.getElementById("op-image4").src = 'images/green.png';       
     lock = 4;
