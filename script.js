@@ -1,5 +1,6 @@
+//Read the code it is very easy.... Beacause the operations being done here are just reading operations...that means this app is just reading from the database and not writing anything.... everything is well sorted in this code... 
 
-var rootRef = firebase.database().ref();
+var rootRef = firebase.database().ref();//Here I am taking the root reference of the firebase database into the variable rootRef
 
 var c = 0;
 var answer = 0;
@@ -8,6 +9,7 @@ var i;
 var myData;
 
     var ref= firebase.database().ref();
+//The once() function here basically is a function that is triggered, 'once' when your app starts... So here what I did is I took all the data from the database into the array "myData[]" and then I have done some changes in the HTML using that data..
 
     ref.once('value', function(snapshot) {
         myData = snapshot.val();
@@ -24,6 +26,7 @@ $("#next").on("click", function () {
     c++;
     console.log(c);
     ref = firebase.database().ref();
+    //Now here the function on() is a little different from the function once() which means that it does not get triggered once after the app starts but it gets triggered each and everytime there is change being made in the database...
     
     ref.on('value', function(snapshot) {
     
